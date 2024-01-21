@@ -65,54 +65,55 @@ const VirtualAssistance = () => {
     };
     return (
         <Fragment>
-
-            <div
-                id="switcher"
-                className={toggle ? "open" : "close"}
-                style={{ display: "block", marginTop: "100px" }}
-            >
-                <Box
-                    sx={{
-                        height: "80vh",
-                        display: "flex",
-                        flexDirection: "column",
-                        bgcolor: "grey.200",
-                    }}
+            <div className="header-inner hide-mobile">
+                <div
+                    id="switcher"
+                    className={toggle ? "open" : "close"}
+                    style={{ display: "block", marginTop: "100px" }}
                 >
-                    <Box sx={{ flexGrow: 1, overflow: "auto", p: 2 }}>
-                        {messages.map((message) => (
-                            <Message key={message.id} message={message} />
-                        ))}
-                    </Box>
-                    <Box sx={{ p: 2, backgroundColor: "background.default" }}>
-                        <Grid container spacing={2}>
-                            <Grid item xs={10}>
-                                <TextField
-                                    fullWidth
-                                    size="small"
-                                    placeholder="Type a message"
-                                    variant="outlined"
-                                    value={input}
-                                    onChange={handleInputChange}
-                                />
+                    <Box
+                        sx={{
+                            height: "80vh",
+                            display: "flex",
+                            flexDirection: "column",
+                            bgcolor: "grey.200",
+                        }}
+                    >
+                        <Box sx={{ flexGrow: 1, overflow: "auto", p: 2 }}>
+                            {messages.map((message) => (
+                                <Message key={message.id} message={message} />
+                            ))}
+                        </Box>
+                        <Box sx={{ p: 2, backgroundColor: "background.default" }}>
+                            <Grid container spacing={2}>
+                                <Grid item xs={10}>
+                                    <TextField
+                                        fullWidth
+                                        size="small"
+                                        placeholder="Type a message"
+                                        variant="outlined"
+                                        value={input}
+                                        onChange={handleInputChange}
+                                    />
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <Button
+                                        fullWidth
+                                        size="large"
+                                        color="primary"
+                                        variant="contained"
+                                        endIcon={<SendIcon />}
+                                        onClick={handleSend}
+                                    >
+                                        Send
+                                    </Button>
+                                </Grid>
                             </Grid>
-                            <Grid item xs={2}>
-                                <Button
-                                    fullWidth
-                                    size="large"
-                                    color="primary"
-                                    variant="contained"
-                                    endIcon={<SendIcon />}
-                                    onClick={handleSend}
-                                >
-                                    Send
-                                </Button>
-                            </Grid>
-                        </Grid>
+                        </Box>
                     </Box>
-                </Box>
-                <div id="hideSwitcher" onClick={() => setToggle(false)}>
-                    ×
+                    <div id="hideSwitcher" onClick={() => setToggle(false)}>
+                        ×
+                    </div>
                 </div>
             </div>
             <div
@@ -122,6 +123,69 @@ const VirtualAssistance = () => {
                 onClick={() => setToggle(true)}
             >
                 <i className="fa fa-cog" />
+            </div>
+
+
+            <div className="mobile-menu">
+                <div
+                    id="switcher"
+                    className={toggle ? "open" : "close"}
+                    style={{ display: "block", marginTop: "300px", width: "100%" }}
+                >
+                    <Box
+                        sx={{
+                            height: "80vh",
+                            display: "flex",
+                            flexDirection: "column",
+                            bgcolor: "grey.200",
+                        }}
+                    >
+                        <Box sx={{ flexGrow: 1, overflow: "auto", p: 2 }}>
+                            {messages.map((message) => (
+                                <Message key={message.id} message={message} />
+                            ))}
+                        </Box>
+                        <Box sx={{ p: 2, backgroundColor: "background.default" }}>
+                            <Grid container spacing={2}>
+                                <Grid item xs={10}>
+                                    <TextField
+                                        fullWidth
+                                        size="small"
+                                        placeholder="Type a message"
+                                        variant="outlined"
+                                        value={input}
+                                        onChange={handleInputChange}
+                                    />
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <Button
+                                        fullWidth
+                                        size="large"
+                                        color="primary"
+                                        variant="contained"
+                                        endIcon={<SendIcon />}
+                                        onClick={handleSend}
+                                    >
+                                        Send
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </Box>
+                    </Box>
+                    <div id="hideSwitcher" onClick={() => setToggle(false)}>
+                        ×
+                    </div>
+                </div>
+
+                <div
+                    id="showSwitcher"
+                    className={`styleSecondColor ${toggle ? "close" : "open"}`}
+                    style={{ marginTop: "100px" }}
+                    onClick={() => setToggle(true)}
+                >
+                    <i className="fa fa-cog" />
+                </div>
+
             </div>
         </Fragment>
     );
