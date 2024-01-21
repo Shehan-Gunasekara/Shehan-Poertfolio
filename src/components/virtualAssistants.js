@@ -1,10 +1,24 @@
+import React, { useState } from 'react';
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+
+
+
 import Head from "next/head";
-import { Fragment, useState } from "react";
-import * as React from "react";
+
 import {
-    Box,
+
     TextField,
-    Button,
+
     Typography,
     Grid,
     Paper,
@@ -21,16 +35,21 @@ const messages = [
     { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
     { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
     { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 4, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 5, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 6, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
 ];
-
 const Message = ({ message }) => {
-    const isBot = message.sender === "bot";
+    const isBot = message.sender === 'bot';
 
     return (
         <Box
             sx={{
-                display: "flex",
-                justifyContent: isBot ? "flex-start" : "flex-end",
+                display: 'flex',
+                justifyContent: isBot ? 'flex-start' : 'flex-end',
                 mb: 2,
             }}
         >
@@ -38,8 +57,10 @@ const Message = ({ message }) => {
                 variant="outlined"
                 sx={{
                     p: 2,
-                    backgroundColor: isBot ? "primary.light" : "secondary.light",
-                    borderRadius: isBot ? "20px 20px 20px 5px" : "20px 20px 5px 20px",
+                    backgroundColor: isBot ? 'primary.light' : 'secondary.light',
+                    borderRadius: isBot
+                        ? '20px 20px 20px 5px'
+                        : '20px 20px 5px 20px',
                 }}
             >
                 <Typography variant="body1">{message.text}</Typography>
@@ -47,147 +68,66 @@ const Message = ({ message }) => {
         </Box>
     );
 };
-
-const VirtualAssistance = () => {
-    const [input, setInput] = React.useState("");
-    const [color, setColor] = useState("yellow");
+const TemporaryDrawer = () => {
+    const [state, setState] = useState({
+        left: false,
+    });
     const [toggle, setToggle] = useState(false);
-
-    const handleSend = () => {
-        if (input.trim() !== "") {
-            console.log(input);
-            setInput("");
-        }
+    const toggleDrawer = (open) => () => {
+        setState({ left: open });
+        setToggle(open)
+        console.log("toggle", toggle)
     };
 
-    const handleInputChange = (event) => {
-        setInput(event.target.value);
-    };
     return (
-        <Fragment>
-            <div className="header-inner hide-mobile">
-                <div
-                    id="switcher"
-                    className={toggle ? "open" : "close"}
-                    style={{ display: "block", marginTop: "100px" }}
-                >
-                    <Box
-                        sx={{
-                            height: "80vh",
-                            display: "flex",
-                            flexDirection: "column",
-                            bgcolor: "grey.200",
-                        }}
-                    >
-                        <Box sx={{ flexGrow: 1, overflow: "auto", p: 2 }}>
-                            {messages.map((message) => (
-                                <Message key={message.id} message={message} />
-                            ))}
-                        </Box>
-                        <Box sx={{ p: 2, backgroundColor: "background.default" }}>
-                            <Grid container spacing={2}>
-                                <Grid item xs={10}>
-                                    <TextField
-                                        fullWidth
-                                        size="small"
-                                        placeholder="Type a message"
-                                        variant="outlined"
-                                        value={input}
-                                        onChange={handleInputChange}
-                                    />
-                                </Grid>
-                                <Grid item xs={2}>
-                                    <Button
-                                        fullWidth
-                                        size="large"
-                                        color="primary"
-                                        variant="contained"
-                                        endIcon={<SendIcon />}
-                                        onClick={handleSend}
-                                    >
-                                        Send
-                                    </Button>
-                                </Grid>
-                            </Grid>
-                        </Box>
-                    </Box>
-                    <div id="hideSwitcher" onClick={() => setToggle(false)}>
-                        ×
-                    </div>
-                </div>
-            </div>
-            <div
-                id="showSwitcher"
-                className={`styleSecondColor ${toggle ? "close" : "open"}`}
-                style={{ marginTop: "100px" }}
-                onClick={() => setToggle(true)}
-            >
-                <i className="fa fa-cog" />
-            </div>
-
-
-            <div className="mobile-menu">
-                <div
-                    id="switcher"
-                    className={toggle ? "open" : "close"}
-                    style={{ display: "block", marginTop: "300px", width: "100%" }}
-                >
-                    <Box
-                        sx={{
-                            height: "80vh",
-                            display: "flex",
-                            flexDirection: "column",
-                            bgcolor: "grey.200",
-                        }}
-                    >
-                        <Box sx={{ flexGrow: 1, overflow: "auto", p: 2 }}>
-                            {messages.map((message) => (
-                                <Message key={message.id} message={message} />
-                            ))}
-                        </Box>
-                        <Box sx={{ p: 2, backgroundColor: "background.default" }}>
-                            <Grid container spacing={2}>
-                                <Grid item xs={10}>
-                                    <TextField
-                                        fullWidth
-                                        size="small"
-                                        placeholder="Type a message"
-                                        variant="outlined"
-                                        value={input}
-                                        onChange={handleInputChange}
-                                    />
-                                </Grid>
-                                <Grid item xs={2}>
-                                    <Button
-                                        fullWidth
-                                        size="large"
-                                        color="primary"
-                                        variant="contained"
-                                        endIcon={<SendIcon />}
-                                        onClick={handleSend}
-                                    >
-                                        Send
-                                    </Button>
-                                </Grid>
-                            </Grid>
-                        </Box>
-                    </Box>
-                    <div id="hideSwitcher" onClick={() => setToggle(false)}>
-                        ×
-                    </div>
-                </div>
-
+        <div>
+            <React.Fragment key="left">
                 <div
                     id="showSwitcher"
                     className={`styleSecondColor ${toggle ? "close" : "open"}`}
                     style={{ marginTop: "100px" }}
-                    onClick={() => setToggle(true)}
+                    onClick={toggleDrawer(true)}
+
                 >
                     <i className="fa fa-cog" />
                 </div>
 
-            </div>
-        </Fragment>
+                <Drawer
+                    anchor="left"
+                    open={state.left}
+                    onClose={toggleDrawer(false)}
+                    sx={{ width: '100%' }}
+                >
+                    <button onClick={toggleDrawer(false)}>Close</button>
+                    <div
+                        style={{
+                            height: '100vh',
+                            overflowY: 'auto',
+                            position: 'relative',
+                        }}
+                    >
+                        <div style={{ width: '100%', padding: '20px' }}>
+                            {messages.map((message) => (
+                                <Message key={message.id} message={message} />
+                            ))}
+                        </div>
+                    </div>
+                    <input
+                        type="text"
+                        placeholder="Type your message here"
+                        style={{
+                            width: '100%',
+                            padding: '20px',
+                            position: 'absolute',
+                            bottom: '0',
+                        }}
+                    />
+                </Drawer>
+            </React.Fragment >
+        </div >
     );
 };
-export default VirtualAssistance;
+
+
+
+export default TemporaryDrawer;
