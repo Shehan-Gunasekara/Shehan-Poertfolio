@@ -10,8 +10,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-
-
+import TextareaAutosize from '@mui/material/TextareaAutosize';
+import { IoSend } from "react-icons/io5";
 
 import Head from "next/head";
 
@@ -57,7 +57,7 @@ const Message = ({ message }) => {
                 variant="outlined"
                 sx={{
                     p: 2,
-                    backgroundColor: isBot ? 'primary.light' : 'secondary.light',
+                    backgroundColor: isBot ? '#6A6969' : '#D5D5D5',
                     borderRadius: isBot
                         ? '20px 20px 20px 5px'
                         : '20px 20px 5px 20px',
@@ -78,7 +78,31 @@ const TemporaryDrawer = () => {
         setToggle(open)
         console.log("toggle", toggle)
     };
+    const [message, setMessage] = useState('');
 
+    const handleInputChange = (event) => {
+        setMessage(event.target.value);
+    };
+
+    const handleKeyPress = (event) => {
+        // Check if the pressed key is Enter
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent the default behavior of Enter in a textarea
+            // Handle sending the message (you can replace this with your logic)
+            console.log('Sending message:', message);
+        }
+    };
+
+    const handleTextAreaResize = (event) => {
+        // Set a maximum height for the textarea
+        const maxHeight = 100; // Adjust this value as needed
+        if (event.target.scrollHeight <= maxHeight) {
+            event.target.style.height = 'auto';
+            event.target.style.height = `${event.target.scrollHeight}px`;
+        } else {
+            event.target.style.overflowY = 'auto';
+        }
+    };
     return (
         <div>
             <React.Fragment key="left">
@@ -96,32 +120,70 @@ const TemporaryDrawer = () => {
                     anchor="left"
                     open={state.left}
                     onClose={toggleDrawer(false)}
-                    sx={{ width: '100%' }}
+                    sx={{ width: '100%', }}
+                    PaperProps={{
+                        elevation: 8,
+                        sx: {
+
+
+                            color: "rgba(225,249,27,1)",
+                            backgroundColor: 'rgba(0, 0, 0, 0.8);'
+                        }
+                    }}
                 >
-                    <button onClick={toggleDrawer(false)}>Close</button>
-                    <div
-                        style={{
-                            height: '100vh',
-                            overflowY: 'auto',
-                            position: 'relative',
-                        }}
-                    >
-                        <div style={{ width: '100%', padding: '20px' }}>
-                            {messages.map((message) => (
-                                <Message key={message.id} message={message} />
-                            ))}
-                        </div>
+
+
+                    <Grid container spacing={2} sx={{ p: 2 }}>
+                        <Grid item xs={11}></Grid>
+                        <Grid item xs={1}>
+                            <button className='closeButton' onClick={toggleDrawer(false)}>X</button>
+                        </Grid>
+                    </Grid>
+
+                    <div className="scroll-container">
+                        {messages.map((message) => (
+                            <Message key={message.id} message={message} />
+                        ))}
                     </div>
-                    <input
-                        type="text"
-                        placeholder="Type your message here"
-                        style={{
-                            width: '100%',
-                            padding: '20px',
-                            position: 'absolute',
-                            bottom: '0',
-                        }}
-                    />
+
+                    {/* <Grid container style={{ bottom: '0px', marginBottom: '-2.5em', position: 'relative' }}>
+                        <Grid item xs={11} >
+                            <TextareaAutosize
+                                placeholder='Type your message...'
+                                style={{ width: '100%', minHeight: '2em', maxHeight: '5em', resize: 'none' }}
+                                value={message}
+                                onChange={handleInputChange}
+                                onInput={handleTextAreaResize}
+                            />
+                        </Grid>
+
+                    </Grid>
+
+                    <Grid container style={{ position: 'relative' }}>
+                        <Grid item xs={11} ></Grid>
+                        <Grid item xs={1}>
+                            <Button
+                                variant="contained"
+
+
+                            >
+                                Send
+                            </Button>
+                        </Grid>
+                    </Grid> */}
+
+                    <div style={{ display: 'flex', alignItems: 'center', height: '4em' }}>
+                        <TextareaAutosize
+                            placeholder='Type your message...'
+                            className='TextareaAutosize'
+                            value={message}
+                            onChange={handleInputChange}
+                            onInput={handleTextAreaResize}
+                        />
+                        <button className='chat-send-btn'><IoSend />
+                        </button>
+                    </div>
+
                 </Drawer>
             </React.Fragment >
         </div >
