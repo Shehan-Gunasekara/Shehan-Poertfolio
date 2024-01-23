@@ -27,21 +27,21 @@ import {
 import SendIcon from "@mui/icons-material/Send";
 
 const messages = [
-    // { id: 1, text: "Hi there!", sender: "bot" },
-    // { id: 2, text: "Hello!", sender: "user" },
-    // { id: 3, text: "How can I assist you today af as v cvcvcvcvcvcvcvcvcvcvcvcvcvcvcv ccccccccccccccccc cccccccccccccccccc   cccccccccccccca ds as dasd s?", sender: "bot" },
-    // { id: 4, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    // { id: 5, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
-    // { id: 6, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    // { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
-    // { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    // { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    // { id: 4, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
-    // { id: 5, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    // { id: 6, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
-    // { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
-    // { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    // { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    { id: 1, text: "Hi there!", sender: "bot" },
+    { id: 2, text: "Hello!", sender: "user" },
+    { id: 3, text: "How can I assist you today af as v cvcvcvcvcvcvcvcvcvcvcvcvcvcvcv ccccccccccccccccc cccccccccccccccccc   cccccccccccccca ds as dasd s?", sender: "bot" },
+    { id: 4, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 5, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    { id: 6, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 4, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    { id: 5, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 6, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
 ];
 const Message = ({ message }) => {
     const isBot = message.sender === 'bot';
