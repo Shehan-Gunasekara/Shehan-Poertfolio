@@ -15,7 +15,8 @@ import { IoSend } from "react-icons/io5";
 import { FaArrowUp } from "react-icons/fa";
 import { BsChatLeftTextFill } from "react-icons/bs";
 import Head from "next/head";
-
+import chatBotLogo from '/public/assets/logos/chatbotLogo.png';
+import Image from 'next/image';
 import {
 
     TextField,
@@ -145,8 +146,19 @@ const TemporaryDrawer = () => {
                 >
 
 
-                    <Grid container spacing={2} sx={{ p: 2 }}>
-                        <Grid item xs={11.0}><h3>Virtual Assistance</h3></Grid>
+                    <Grid container spacing={0} sx={{ paddingTop: 1, borderBottom: "1px solid rgb(215, 214, 214,0.5)" }}>
+                        <Grid item xs={11.4}>
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                <Image
+                                    src={chatBotLogo}
+                                    alt="Description of your image"
+                                    width={130}
+                                    height={80}
+                                    style={{ marginRight: '-3%' }} // Adjust margin as needed
+                                />
+                                <p style={{ marginTop: '1%', color: 'white', fontFamily: "serif" }}>Virtual Assistance</p>
+                            </div>
+                        </Grid>
                         <Grid item xs={0.5}>
                             <button className='closeButton' onClick={toggleDrawer(false)}>X</button>
                         </Grid>

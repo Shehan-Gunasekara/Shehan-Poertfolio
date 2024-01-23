@@ -311,6 +311,7 @@
 	padding: 1em;
 	/* Add padding for better visual appearance */
 	cursor: pointer;
+	margin-top: 1em;
 }
 
 .chat-send-btn {
