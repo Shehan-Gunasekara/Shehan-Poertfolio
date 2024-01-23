@@ -131,9 +131,15 @@ const TemporaryDrawer = () => {
                         elevation: 8,
                         sx: {
 
-
+                            height: '100%',
                             color: "rgba(225,249,27,1)",
-                            backgroundColor: 'rgba(10, 10, 10, 0.9)'
+                            backgroundColor: 'rgba(10, 10, 10, 0.9)',
+                            width: '50%',  // Default width for desktop
+
+                            // Media query for mobile
+                            '@media (max-width: 910px)': {
+                                width: '100%',  // Set width to 100% for screens with width up to 767px
+                            }
                         }
                     }}
                 >
@@ -147,13 +153,17 @@ const TemporaryDrawer = () => {
                     </Grid>
 
                     <div className="scroll-container" style={{
-                        paddingLeft: "1em", paddingRight: "1em", minWidth: '42em', maxWidth: '42em', minHeight: '80vh', maxHeight: '80vh', overflowY: 'scroll'
-
+                        paddingLeft: "1em",
+                        paddingRight: "1em",
+                        overflowY: 'scroll',
+                        width: '100%',
+                        height: '100%',
                     }}>
                         {messages.map((message) => (
                             <Message key={message.id} message={message} />
                         ))}
                     </div>
+
 
                     {/* <Grid container style={{ bottom: '0px', marginBottom: '-2.5em', position: 'relative' }}>
                         <Grid item xs={11} >
