@@ -299,20 +299,22 @@
 	background-color: #252627;
 	color: #fff;
 	border: none;
+	width: 1em;
+	height: 1em;
 	/* Remove border for a cleaner look */
-	border-radius: 50%;
+	border-radius: 100%;
 	text-align: center;
 	display: flex;
 	/* Use flex for centering content horizontally and vertically */
 	align-items: center;
 	justify-content: center;
-	padding: 10px;
+	padding: 1em;
 	/* Add padding for better visual appearance */
 	cursor: pointer;
 }
 
 .chat-send-btn {
-	background-color: #118ce7;
+	background-color: goldenrod;
 	border: none;
 	/* Remove border for a cleaner look */
 	border-radius: 50%;
@@ -333,36 +335,33 @@
 	/* Set the color of the icon */
 }
 
-/* Apply styles to the TextareaAutosize component */
 .TextareaAutosize {
 	width: 100%;
-	min-height: 2em;
-	max-height: 3em;
-	overflow-y: auto;
+	min-height: 1em;
+	max-height: 5em;
+	overflow-y: hidden;
+	/* Hide the vertical scrollbar */
 	resize: none;
 	padding: 10px;
-	/* Add padding for better visual appearance */
 	font-size: 14px;
-	/* Adjust the main font size as needed */
-	border: 1px solid #ccc;
-	/* Add a border for a cleaner look */
+	border: 1px solid #495069c2;
 	border-radius: 8px;
-	/* Add border-radius for rounded corners */
+	scrollbar-color: transparent transparent;
+	background-color: #495069c2;
+	color: #ffffff;
+	margin-right: 1em;
+}
+
+.TextareaAutosize::-webkit-scrollbar {
+	width: 0;
+	/* Hide the scrollbar for WebKit browsers (Chrome, Safari, etc.) */
 }
 
 .TextareaAutosize::placeholder {
-	color: #666;
-	/* Set the placeholder text color */
+	color: rgba(224, 224, 224, 0.682);
 	font-size: 12px;
-	/* Adjust the placeholder font size */
 }
 
-/* Optional: Apply a focus style */
 .TextareaAutosize:focus {
 	outline: none;
-	/* Remove default focus outline */
-	border-color: #118ce7;
-	/* Set border color on focus */
-	box-shadow: 0 0 5px rgba(17, 140, 231, 0.5);
-	/* Add a subtle box shadow on focus */
 }

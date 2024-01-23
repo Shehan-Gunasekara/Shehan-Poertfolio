@@ -12,7 +12,8 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { IoSend } from "react-icons/io5";
-
+import { FaArrowUp } from "react-icons/fa";
+import { BsChatLeftTextFill } from "react-icons/bs";
 import Head from "next/head";
 
 import {
@@ -30,17 +31,17 @@ const messages = [
     { id: 2, text: "Hello!", sender: "user" },
     { id: 3, text: "How can I assist you today af as da ds as dasd s I assist you today af as da ds as dasd s?", sender: "bot" },
     { id: 4, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    { id: 5, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 5, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
     { id: 6, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
     { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
     { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    { id: 4, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 4, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
     { id: 5, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    { id: 6, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 6, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
     { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
 ];
 const Message = ({ message }) => {
     const isBot = message.sender === 'bot';
@@ -57,7 +58,9 @@ const Message = ({ message }) => {
                 variant="outlined"
                 sx={{
                     p: 2,
-                    backgroundColor: isBot ? '#6A6969' : '#D5D5D5',
+                    backgroundColor: isBot ? '#252833' : 'transparent',
+                    border: isBot ? 'none' : '0.1em solid #252833',
+                    color: 'white',
                     borderRadius: isBot
                         ? '20px 20px 20px 5px'
                         : '20px 20px 5px 20px',
@@ -105,15 +108,17 @@ const TemporaryDrawer = () => {
     };
     return (
         <div>
+            <Head>
+                <link rel="stylesheet" href={`css/skins/goldenrod.css`} />
+            </Head>
             <React.Fragment key="left">
                 <div
                     id="showSwitcher"
                     className={`styleSecondColor ${toggle ? "close" : "open"}`}
-                    style={{ marginTop: "100px" }}
                     onClick={toggleDrawer(true)}
 
                 >
-                    <i className="fa fa-cog" />
+                    <BsChatLeftTextFill />
                 </div>
 
                 <Drawer
@@ -127,20 +132,20 @@ const TemporaryDrawer = () => {
 
 
                             color: "rgba(225,249,27,1)",
-                            backgroundColor: 'rgba(0, 0, 0, 0.8);'
+                            backgroundColor: 'rgba(10, 10, 10, 0.9)'
                         }
                     }}
                 >
 
 
                     <Grid container spacing={2} sx={{ p: 2 }}>
-                        <Grid item xs={11}></Grid>
-                        <Grid item xs={1}>
+                        <Grid item xs={11.4}></Grid>
+                        <Grid item xs={0.5}>
                             <button className='closeButton' onClick={toggleDrawer(false)}>X</button>
                         </Grid>
                     </Grid>
 
-                    <div className="scroll-container">
+                    <div className="scroll-container" style={{ paddingLeft: "1em", paddingRight: "1em" }}>
                         {messages.map((message) => (
                             <Message key={message.id} message={message} />
                         ))}
@@ -172,7 +177,7 @@ const TemporaryDrawer = () => {
                         </Grid>
                     </Grid> */}
 
-                    <div style={{ display: 'flex', alignItems: 'center', height: '4em' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', height: '7em', paddingLeft: '1em', paddingRight: '1em', backgroundColor: "rgba(5, 5, 5, 0.9)" }}>
                         <TextareaAutosize
                             placeholder='Type your message...'
                             className='TextareaAutosize'
@@ -180,7 +185,7 @@ const TemporaryDrawer = () => {
                             onChange={handleInputChange}
                             onInput={handleTextAreaResize}
                         />
-                        <button className='chat-send-btn'><IoSend />
+                        <button className='chat-send-btn'><FaArrowUp />
                         </button>
                     </div>
 
