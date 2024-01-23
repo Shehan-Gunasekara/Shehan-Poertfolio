@@ -147,14 +147,14 @@ const TemporaryDrawer = () => {
 
 
                     <Grid container spacing={0} sx={{ paddingTop: 1, borderBottom: "1px solid rgb(215, 214, 214,0.5)" }}>
-                        <Grid item xs={11.4}>
+                        <Grid item xs={11}>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <Image
                                     src={chatBotLogo}
                                     alt="Description of your image"
                                     width={130}
                                     height={80}
-                                    style={{ marginRight: '-3%' }} // Adjust margin as needed
+                                    style={{ marginRight: '-3%', marginLeft: '-3%' }} // Adjust margin as needed
                                 />
                                 <p style={{ marginTop: '1%', color: 'white', fontFamily: "serif" }}>Virtual Assistance</p>
                             </div>
