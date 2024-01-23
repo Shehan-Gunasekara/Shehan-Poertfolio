@@ -27,21 +27,21 @@ import {
 import SendIcon from "@mui/icons-material/Send";
 
 const messages = [
-    { id: 1, text: "Hi there!", sender: "bot" },
-    { id: 2, text: "Hello!", sender: "user" },
-    { id: 3, text: "How can I assist you today af as da ds as dasd s I assist you today af as da ds as dasd s?", sender: "bot" },
-    { id: 4, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    { id: 5, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
-    { id: 6, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
-    { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    { id: 4, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
-    { id: 5, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    { id: 6, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
-    { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
-    { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
-    { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    // { id: 1, text: "Hi there!", sender: "bot" },
+    // { id: 2, text: "Hello!", sender: "user" },
+    // { id: 3, text: "How can I assist you today af as v cvcvcvcvcvcvcvcvcvcvcvcvcvcvcv ccccccccccccccccc cccccccccccccccccc   cccccccccccccca ds as dasd s?", sender: "bot" },
+    // { id: 4, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    // { id: 5, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    // { id: 6, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    // { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    // { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    // { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    // { id: 4, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    // { id: 5, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    // { id: 6, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    // { id: 7, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
+    // { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
+    // { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
 ];
 const Message = ({ message }) => {
     const isBot = message.sender === 'bot';
@@ -64,6 +64,7 @@ const Message = ({ message }) => {
                     borderRadius: isBot
                         ? '20px 20px 20px 5px'
                         : '20px 20px 5px 20px',
+                    width: 'fit-content',
                 }}
             >
                 <Typography variant="body1">{message.text}</Typography>
@@ -145,10 +146,13 @@ const TemporaryDrawer = () => {
                         </Grid>
                     </Grid>
 
-                    <div className="scroll-container" style={{ paddingLeft: "1em", paddingRight: "1em", minWidth: "41em", minHeight: "82vh" }}>
-                        {/* {messages.map((message) => (
+                    <div className="scroll-container" style={{
+                        paddingLeft: "1em", paddingRight: "1em", minWidth: '42em', maxWidth: '42em', minHeight: '80vh', maxHeight: '80vh', overflowY: 'scroll'
+
+                    }}>
+                        {messages.map((message) => (
                             <Message key={message.id} message={message} />
-                        ))} */}
+                        ))}
                     </div>
 
                     {/* <Grid container style={{ bottom: '0px', marginBottom: '-2.5em', position: 'relative' }}>
