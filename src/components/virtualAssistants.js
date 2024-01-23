@@ -139,16 +139,16 @@ const TemporaryDrawer = () => {
 
 
                     <Grid container spacing={2} sx={{ p: 2 }}>
-                        <Grid item xs={11.4}></Grid>
+                        <Grid item xs={11.0}><h3>Virtual Assistance</h3></Grid>
                         <Grid item xs={0.5}>
                             <button className='closeButton' onClick={toggleDrawer(false)}>X</button>
                         </Grid>
                     </Grid>
 
-                    <div className="scroll-container" style={{ paddingLeft: "1em", paddingRight: "1em" }}>
-                        {messages.map((message) => (
+                    <div className="scroll-container" style={{ paddingLeft: "1em", paddingRight: "1em", minWidth: "41em", minHeight: "82vh" }}>
+                        {/* {messages.map((message) => (
                             <Message key={message.id} message={message} />
-                        ))}
+                        ))} */}
                     </div>
 
                     {/* <Grid container style={{ bottom: '0px', marginBottom: '-2.5em', position: 'relative' }}>
