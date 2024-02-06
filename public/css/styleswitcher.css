@@ -366,3 +366,80 @@
 .TextareaAutosize:focus {
 	outline: none;
 }
+
+.contactUsForm{
+
+	width: 90%; /* Change width */
+	border-radius: 0.2em;
+	outline: none;
+	padding: 1em;
+	color: #494949; 
+	background-color: #353535;
+	color: #ffffff;
+	border: 0.05em solid #495069c2;
+
+	min-height: 2.8em;
+	font-size: 0.8em;
+}
+
+.contactUslable{
+	color: #ffffffe7;
+	font-size: 0.8em;
+
+	margin-bottom: 0.5em;
+}
+
+.ContactUSTextareaAutosize{	width: 90%;
+	min-height: 7em;
+	max-height: 10em;
+	overflow-y: hidden;
+	/* Hide the vertical scrollbar */
+	resize: none;
+	padding: 1em;
+	font-size: 0.8em;
+	border: 0.05em solid #495069c2;
+	border-radius: 0.2;
+	scrollbar-color: transparent transparent;
+	background-color: #353535;
+	color: #ffffff;
+	margin-right: 1em;
+	outline: none;}
+
+.errorMsg {
+	color: rgb(207, 0, 0);
+	font-size: 0.8em;
+	margin-top: 0.2em;
+	}
+	 .custom-file-upload {
+		display: inline-block;
+		padding: 0.5em 1em;
+		cursor: pointer;
+		background-color: #353535;
+		color: #fff;
+		border-radius: 0.2em;
+		border: none;
+		transition: background-color 0.3s ease;
+		font-size: 0.7em;
+	  }
+	  
+	  .custom-file-upload:hover {
+		background-color: #252525;
+	  }
+	  
+	  /* Hide the default file input */
+	  input[type="file"] {
+		display: none;
+	  }
+	  
+	  .contactUsButton{
+		padding: 0.5em 1em;
+		color: #ffffffe7;
+		background-color: goldenrod;
+		font-size: 0.8em;
+		display:inline-block;
+		border-radius: 0.5em;
+	  }
+
+
+
+	

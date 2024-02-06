@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
+import { Fragment, useEffect } from "react";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -26,6 +27,7 @@ import {
     Paper,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
+import { getCookie, setCookie } from '../utilits';
 
 const messages = [
     { id: 1, text: "Hi there!", sender: "bot" },
@@ -44,6 +46,9 @@ const messages = [
     { id: 8, text: "How can I assist you today af as da ds as dasd s ?", sender: "bot" },
     { id: 9, text: "How can I assist you today af as da ds as dasd s ?", sender: "user" },
 ];
+
+
+
 const Message = ({ message }) => {
     const isBot = message.sender === 'bot';
 
@@ -84,6 +89,17 @@ const TemporaryDrawer = () => {
         console.log("toggle", toggle)
     };
     const [message, setMessage] = useState('');
+
+    useEffect(() => {
+        console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
+        const cookie = getCookie('id')
+        console.log('cookie', cookie)
+        if (!cookie) {
+            setCookie('id', '45356', {})
+        } else {
+            console.log('cookie', cookie)
+        }
+    }, []);
 
     const handleInputChange = (event) => {
         setMessage(event.target.value);
@@ -147,7 +163,7 @@ const TemporaryDrawer = () => {
 
 
                     <Grid container spacing={0} sx={{ paddingTop: 1, borderBottom: "1px solid rgb(215, 214, 214,0.5)" }}>
-                        <Grid item xs={11}>
+                        <Grid item xs={10.5} sm={11.0} >
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <Image
                                     src={chatBotLogo}

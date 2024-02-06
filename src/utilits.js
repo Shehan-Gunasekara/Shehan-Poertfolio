@@ -1,6 +1,18 @@
 import $ from "jquery";
 import "jquery-mousewheel";
 import "malihu-custom-scrollbar-plugin";
+
+import Cookies from 'js-cookie';
+
+export const setCookie = (key, value, options = {}) => {
+  Cookies.set(key, value, options);
+};
+
+
+export const getCookie = (key) => {
+  return Cookies.get(key);
+};
+
 export const jqueryFuntion = () => {
   $(window).on("load", function () {
     /* ----------------------------------------------------------- */
@@ -173,8 +185,8 @@ export const jqueryFuntion = () => {
         "",
         document.title,
         window.location.origin +
-          window.location.pathname +
-          window.location.search
+        window.location.pathname +
+        window.location.search
       );
     }
 
