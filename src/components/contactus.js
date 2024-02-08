@@ -1,8 +1,8 @@
-import React, { use, useState } from "react";
+import React, { use, useState,useRef } from "react";
 import { Fragment, useEffect } from "react";
-import Box from "@mui/material/Box";
+
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
+
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
@@ -25,6 +25,17 @@ import SendIcon from "@mui/icons-material/Send";
 import { getCookie, setCookie } from "../utilits";
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { RiMailSendFill } from "react-icons/ri";
+import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
+import { green } from '@mui/material/colors';
+import Button from '@mui/material/Button';
+import { IoIosSend } from "react-icons/io";
+import Fab from '@mui/material/Fab';
+import CheckIcon from '@mui/icons-material/Check';
+import SaveIcon from '@mui/icons-material/Save';
+
+
 const ContactUs = () => {
   const [state, setState] = useState({
     left: false,
@@ -33,6 +44,13 @@ const ContactUs = () => {
   const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [fileName, setFileName] = useState("");
+
+  const [loading, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
+  const timer = useRef();
+
+
+
   const router = useRouter();
   const toggleDrawer = (open) => () => {
     setState({ left: open });
@@ -59,6 +77,7 @@ const ContactUs = () => {
   const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
+    setSuccess(false);
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -67,6 +86,7 @@ const ContactUs = () => {
   };
 
   const handleFileChange = (e) => {
+    setSuccess(false);
     const file = e.target.files[0];
     setFormData({
       ...formData,
@@ -80,6 +100,7 @@ const ContactUs = () => {
   };
 
   const handleFormSubmit =async(e) => {
+    console.log("formData",formData);
     e.preventDefault();
  
     // Validate form fields
@@ -95,40 +116,41 @@ const ContactUs = () => {
     if (!formData.message.trim()) {
       newErrors = { ...newErrors, message: "Message is required" };
     }
-    if (!formData.attachment) {
-      newErrors = { ...newErrors, attachment: "Attachment is required" };
-    } else {
-        const allowedFileTypes = [
-            "pdf",
-            "doc",
-            "docx",
-            "txt",
-            "csv",
-            "xls",
-            "xlsx",
-            "jpg",
-            "jpeg",
-            "png",
-            "gif",
-            // Add more image formats as needed
-          ];
-          
-          const fileType = formData.attachment.name.split(".").pop().toLowerCase();
-          
-          if (!allowedFileTypes.includes(fileType)) {
-            newErrors = {
-              ...newErrors,
-              attachment:
-                "Invalid file type. Allowed: pdf, doc, docx, txt, csv, xls, xlsx, jpg, jpeg, png, gif",
-            };
-          }
-    }
+    if (formData.attachment) {
+      const allowedFileTypes = [
+        "pdf",
+        "doc",
+        "docx",
+        "txt",
+        "csv",
+        "xls",
+        "xlsx",
+        "jpg",
+        "jpeg",
+        "png",
+        "gif",
+        // Add more image formats as needed
+      ];
+      
+      const fileType = formData.attachment.name.split(".").pop().toLowerCase();
+      
+      if (!allowedFileTypes.includes(fileType)) {
+        newErrors = {
+          ...newErrors,
+          attachment:
+            "Invalid file type. Allowed: pdf, doc, docx, txt, csv, xls, xlsx, jpg, jpeg, png, gif",
+        };
+      }
+    } 
     setErrors(newErrors);
 console.log("newErrors",newErrors);
     // If no errors, submit form
     if (Object.keys(newErrors).length === 0) {
-        setIsLoading(true);
+      setSuccess(false);
+      setLoading(true);
+   
         try {
+          console.log("formData",formData);
              await axios.post('https://flask-python-portfolio-5ffcdbf52aeb.herokuapp.com/email', formData, {
               headers: {
                 'Content-Type': 'multipart/form-data'
@@ -136,8 +158,17 @@ console.log("newErrors",newErrors);
             }).then((response) => {
                 console.log("SSSSSSSSSSSSSSSSSS",response.status);
                       // Reset form fields and errors
-                      router.reload();
-               
+                
+                      setFormData({
+                        name: "",
+                        email: "",
+                        message: "",
+                        attachment: null,
+                      });
+                      setFileName("");
+                      setIsLoading(false);
+                      setSuccess(true);
+                      setLoading(false);
             })
           
           } catch (error) {
@@ -145,6 +176,33 @@ console.log("newErrors",newErrors);
           }
     }
   };
+
+  const buttonSx  = {
+    bgcolor: success ? 'rgb(212, 154, 6)': 'rgb(233, 187, 71)',
+    '&:hover': {
+      bgcolor: success ? 'rgb(212, 154, 6)': 'rgb(233, 187, 71)',
+    },
+    
+  };
+  
+
+  React.useEffect(() => {
+    return () => {
+      clearTimeout(timer.current);
+    };
+  }, []);
+
+  // const handleButtonClick = () => {
+  //   if (!loading) {
+  //     setSuccess(false);
+  //     setLoading(true);
+  //     timer.current = window.setTimeout(() => {
+  //       setSuccess(true);
+  //       setLoading(false);
+  //     }, 2000);
+  //   }
+  // };
+
 
   return (
     <div>
@@ -305,22 +363,41 @@ console.log("newErrors",newErrors);
                   </Grid>
                 </Grid>
                 <div style={{ textAlign: "right" }}>
-                  <button
-                    type="submit"
-                    className="contactUsButton"
-                    style={{ marginTop: "1em" }}
-                    disabled={isLoading}
-                  >
-                    Send <BiSolidSend style={{ marginLeft: "0.5em" }} />
-                  </button>
+      
+
+
+
+
+
+      <Box sx={{ m: 1, position: 'relative' }}>
+        {!loading?(<>   <Fab
+          aria-label="save"
+          color="gold"
+          sx={buttonSx}
+          size="medium" 
+          onClick={handleFormSubmit}
+        >
+          {success ? <CheckIcon style={{fontSize:'2em'}}/> : <RiMailSendFill  style={{fontSize:'2em' , color:"#353535"}}/>}
+        </Fab></>):(<> <CircularProgress
+            size={40}
+            sx={{color:"rgb(233, 187, 71)"}}
+          /></>)}
+
+      </Box>
+
+
                 </div>
+
               </form>
             </div>
           </div>
+
         </Drawer>
       </React.Fragment>
+  
     </div>
   );
 };
 
 export default ContactUs;
+
