@@ -11,7 +11,7 @@ const About = () => {
         >
           <div>
             <div>
-              <img className="my-photo" src="assets/about.jpg" alt="" />
+              <img className="my-photo" src="assets/me.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -21,12 +21,12 @@ const About = () => {
           <h2>
             <span>
               <span className="animated-layer fade-in-up-animation fadeInUp wow">
-                Steven
+                Shehan
               </span>
             </span>
             <span>
               <span className="animated-layer fade-in-up-animation fadeInUp wow">
-                Walker
+                Gunasekara
               </span>
             </span>
           </h2>
@@ -36,7 +36,7 @@ const About = () => {
                 <span>
                   <span className="animated-layer fade-in-up-animation fadeInUp wow">
                     <span>Age :</span>
-                    <span>27 Years</span>
+                    <span>24 Years</span>
                   </span>
                 </span>
               </li>
@@ -44,7 +44,7 @@ const About = () => {
                 <span>
                   <span className="animated-layer fade-in-up-animation fadeInUp wow">
                     <span>Nationality :</span>
-                    <span>German</span>
+                    <span>Sinhala</span>
                   </span>
                 </span>
               </li>
@@ -60,7 +60,7 @@ const About = () => {
                 <span>
                   <span className="animated-layer fade-in-up-animation fadeInUp wow">
                     <span>Langages :</span>
-                    <span>English</span>
+                    <span>English/Sinhala</span>
                   </span>
                 </span>
               </li>
@@ -70,7 +70,7 @@ const About = () => {
                 <span>
                   <span className="animated-layer fade-in-up-animation fadeInUp wow">
                     <span>Address :</span>
-                    <span>London</span>
+                    <span>Sri Lanka</span>
                   </span>
                 </span>
               </li>
@@ -78,7 +78,7 @@ const About = () => {
                 <span>
                   <span className="animated-layer fade-in-up-animation fadeInUp wow">
                     <span>Phone :</span>
-                    <span>21 184 010</span>
+                    <span>+9476 368 9506</span>
                   </span>
                 </span>
               </li>
@@ -86,15 +86,28 @@ const About = () => {
                 <span>
                   <span className="animated-layer fade-in-up-animation fadeInUp wow">
                     <span>Email :</span>
-                    <span>contact@steven.net</span>
+                    <a
+                      href="mailto:shehangunasekara2019@gmail.com"
+                      className="no-style"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      shehangunasekara2019@gmail.com
+                    </a>
                   </span>
                 </span>
               </li>
               <li>
                 <span>
                   <span className="animated-layer fade-in-up-animation fadeInUp wow">
-                    <span>Skype :</span>
-                    <span>steven.walker</span>
+                    <span>LinkedIn :</span>
+
+                    <a
+                      href="https://www.linkedin.com/in/shehan-gunasekara-b29638245"
+                      className="no-style"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      Shehan Gunasekara
+                    </a>
                   </span>
                 </span>
               </li>
@@ -124,45 +137,99 @@ const About = () => {
             {/* SKILL ITEM STARTS */}
             <div className="animated-layer fade-in-down-animation fadeInLeft wow">
               <span>
-                <i className="devicon-wordpress-plain" />
+                <i className="devicon-nextjs-plain" />
               </span>
-              <h4>WordPress</h4>
+              <h4>Next JS</h4>
             </div>
             {/* SKILL ITEM ENDS */}
             {/* SKILL ITEM STARTS */}
-            <div className="animated-layer fade-in-up-animation fadeInRight wow">
-              <span>
-                <i className="devicon-jquery-plain" />
-              </span>
-              <h4>jQuery</h4>
-            </div>
-            {/* SKILL ITEM ENDS */}
-          </div>
-          <div>
-            {/* SKILL ITEM STARTS */}
-            <div className="animated-layer fade-in-down-animation fadeInLeft wow">
-              <span>
-                <i className="devicon-angularjs-plain" />
-              </span>
-              <h4>Angular JS</h4>
-            </div>
-            {/* SKILL ITEM ENDS */}
-            {/* SKILL ITEM STARTS */}
-            <div className="animated-layer fade-in-up-animation fadeInRight wow">
-              <span>
-                <i className="devicon-drupal-plain" />
-              </span>
-              <h4>Drupal</h4>
-            </div>
-            {/* SKILL ITEM ENDS */}
-          </div>
-          <div>
-            {/* SKILL ITEM STARTS */}
-            <div className="animated-layer fade-in-down-animation fadeInLeft wow">
+            <div className="animated-layer fade-in-up-animation fadeInLeft wow">
               <span>
                 <i className="devicon-react-plain" />
               </span>
               <h4>React JS</h4>
+            </div>
+            {/* SKILL ITEM ENDS */}
+          </div>{" "}
+          <div>
+            {/* SKILL ITEM STARTS */}
+            <div className="animated-layer fade-in-down-animation fadeInLeft wow">
+              <span>
+                <i className="devicon-flask-plain" />
+              </span>
+              <h4>Flask</h4>
+            </div>
+            {/* SKILL ITEM ENDS */}
+            {/* SKILL ITEM STARTS */}
+            <div className="animated-layer fade-in-up-animation fadeInRight wow">
+              <span>
+                <i className="devicon-nodejs-plain" />
+              </span>
+              <h4>Node JS</h4>
+            </div>
+            {/* SKILL ITEM ENDS */}
+          </div>
+          <div>
+            {/* SKILL ITEM STARTS */}
+            <div className="animated-layer fade-in-down-animation fadeInLeft wow">
+              <span>
+                <i className="devicon-spring-plain" />
+              </span>
+              <h4>Spring Boot</h4>
+            </div>
+            {/* SKILL ITEM ENDS */}
+            {/* SKILL ITEM STARTS */}
+            <div className="animated-layer fade-in-up-animation fadeInRight wow">
+              <span>
+                <i className="devicon-nestjs-plain" />
+              </span>
+              <h4>Nest JS</h4>
+            </div>
+            {/* SKILL ITEM ENDS */}
+          </div>
+          <div>
+            {/* SKILL ITEM STARTS */}
+            <div className="animated-layer fade-in-down-animation fadeInRight wow">
+              <span>
+                <i className="devicon-mongodb-plain" />
+              </span>
+              <h4>MongoDB</h4>
+            </div>
+            {/* SKILL ITEM ENDS */}
+            {/* SKILL ITEM STARTS */}
+            <div className="animated-layer fade-in-up-animation fadeInRight wow">
+              <span>
+                <i className="devicon-mysql-plain" />
+              </span>
+              <h4>MySQL</h4>
+            </div>
+            {/* SKILL ITEM ENDS */}
+          </div>
+          <div>
+            {/* SKILL ITEM STARTS */}
+            <div className="animated-layer fade-in-down-animation fadeInRight wow">
+              <span>
+                <i className="devicon-postgresql-plain" />
+              </span>
+              <h4>PostgreSQL</h4>
+            </div>
+            {/* SKILL ITEM ENDS */}
+            {/* SKILL ITEM STARTS */}
+            <div className="animated-layer fade-in-up-animation fadeInRight wow">
+              <span>
+                <i className="devicon-firebase-plain" />
+              </span>
+              <h4>Firebase</h4>
+            </div>
+            {/* SKILL ITEM ENDS */}
+          </div>
+          <div>
+            {/* SKILL ITEM STARTS */}
+            <div className="animated-layer fade-in-down-animation fadeInRight wow">
+              <span>
+                <i className="devicon-amazonwebservices-plain" />
+              </span>
+              <h4>AWS</h4>
             </div>
             {/* SKILL ITEM ENDS */}
             {/* SKILL ITEM STARTS */}
@@ -171,24 +238,6 @@ const About = () => {
                 <i className="devicon-docker-plain" />
               </span>
               <h4>Docker</h4>
-            </div>
-            {/* SKILL ITEM ENDS */}
-          </div>
-          <div>
-            {/* SKILL ITEM STARTS */}
-            <div className="animated-layer fade-in-down-animation fadeInLeft wow">
-              <span>
-                <i className="devicon-nodejs-plain" />
-              </span>
-              <h4>Node JS</h4>
-            </div>
-            {/* SKILL ITEM ENDS */}
-            {/* SKILL ITEM STARTS */}
-            <div className="animated-layer fade-in-up-animation fadeInRight wow">
-              <span>
-                <i className="devicon-sass-plain" />
-              </span>
-              <h4>Sass</h4>
             </div>
             {/* SKILL ITEM ENDS */}
           </div>
@@ -213,18 +262,54 @@ const About = () => {
         {/* TIMELINE STARTS */}
         <div className="timeline">
           <ol className="animated-layer fade-in-animation">
+            <li>
+              <div className="animated-layer fade-in-down-animation fadeInUp wow">
+                <div className="education">
+                  <h4>
+                    BSc (Hons) in IT (SE)
+                    <br />
+                    <br />
+                  </h4>
+                  <p>
+                    <i className="fa-regular fa-clock" />
+                    <span>2021-2024</span>
+                  </p>
+                  <p>
+                    <i className="fa-solid fa-building-columns" />
+                    <span>SLIIT</span>
+                  </p>
+                </div>
+              </div>
+            </li>
+            {/* TIMELINE ITEM STARTS */}
+            <li>
+              <div className="animated-layer fade-in-up-animation fadeInUp wow">
+                <div className="experience">
+                  <h4>Intern Software Engineer</h4>
+                  <p>
+                    <i className="fa-regular fa-clock" />
+                    <span>2023/May - 2023/Oct</span>
+                  </p>
+                  <p>
+                    <i className="fa-regular fa-building" />
+                    <span>Axcer (PVT) LTD</span>
+                  </p>
+                </div>
+              </div>
+            </li>
+            {/* TIMELINE ITEM ENDS */}
             {/* TIMELINE ITEM STARTS */}
             <li>
               <div className="animated-layer fade-in-down-animation fadeInUp wow">
                 <div className="experience">
-                  <h4>Project Manager</h4>
+                  <h4>Associate Software Engineer </h4>
                   <p>
                     <i className="fa-regular fa-clock" />
-                    <span>2019 - Now</span>
+                    <span>2023/Nov - 2024/Apr</span>
                   </p>
                   <p>
                     <i className="fa-regular fa-building" />
-                    <span>Adobe Company</span>
+                    <span>Axcer (PVT) LTD</span>
                   </p>
                 </div>
               </div>
@@ -234,65 +319,53 @@ const About = () => {
             <li>
               <div className="animated-layer fade-in-up-animation fadeInUp wow">
                 <div className="experience">
-                  <h4>Team Leader</h4>
+                  <h4>
+                    Software Engineer <br />
+                    <br />
+                  </h4>
                   <p>
                     <i className="fa-regular fa-clock" />
-                    <span>2015 - 2019</span>
+                    <span>2024/May - Now</span>
                   </p>
                   <p>
                     <i className="fa-regular fa-building" />
-                    <span>Twitter Inc</span>
+                    <span>Axcer (PVT) LTD</span>
                   </p>
                 </div>
               </div>
             </li>
             {/* TIMELINE ITEM ENDS */}
             {/* TIMELINE ITEM STARTS */}
+
             <li>
               <div className="animated-layer fade-in-down-animation fadeInUp wow">
                 <div className="experience">
-                  <h4>Web Developer</h4>
+                  <h4>Software Engineer (part-time)</h4>
                   <p>
                     <i className="fa-regular fa-clock" />
-                    <span>2010 - 2015</span>
+                    <span>2024/Aug - 2024/Nov </span>
                   </p>
                   <p>
                     <i className="fa-regular fa-building" />
-                    <span>Facebook</span>
+                    <span>LONOvm</span>
                   </p>
                 </div>
               </div>
             </li>
             {/* TIMELINE ITEM ENDS */}
             {/* TIMELINE ITEM STARTS */}
+
             <li>
               <div className="animated-layer fade-in-up-animation fadeInUp wow">
-                <div className="education">
-                  <h4>Master Degree</h4>
+                <div className="experience">
+                  <h4>Software Engineer (part-time)</h4>
                   <p>
                     <i className="fa-regular fa-clock" />
-                    <span>2003</span>
+                    <span>2025/Jan - Now </span>
                   </p>
                   <p>
-                    <i className="fa-solid fa-building-columns" />
-                    <span>London University</span>
-                  </p>
-                </div>
-              </div>
-            </li>
-            {/* TIMELINE ITEM ENDS */}
-            {/* TIMELINE ITEM STARTS */}
-            <li>
-              <div className="animated-layer fade-in-down-animation fadeInUp wow">
-                <div className="education">
-                  <h4>Bachelor Degree</h4>
-                  <p>
-                    <i className="fa-regular fa-clock" />
-                    <span>1999</span>
-                  </p>
-                  <p>
-                    <i className="fa-solid fa-building-columns" />
-                    <span>Berlin High School</span>
+                    <i className="fa-regular fa-building" />
+                    <span>VISION REIMAGINE</span>
                   </p>
                 </div>
               </div>

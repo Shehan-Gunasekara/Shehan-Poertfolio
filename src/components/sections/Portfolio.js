@@ -1,12 +1,9 @@
 import { salimovSlider } from "@/src/sliderProps";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import Link from "next/link";
 const Portfolio = () => {
   return (
-    <section
-      className="portfolio main-section flex-column-mobile"
-      id="portfolio"
-    >
+    <section className="blog main-section flex-column-mobile" id="portfolio">
       {/* TITLE STARTS */}
       <div className="custom-title">
         {/* MAIN TITLE STARTS */}
@@ -22,230 +19,164 @@ const Portfolio = () => {
       {/* TITLE ENDS */}
       <Swiper
         {...salimovSlider.portfolio}
-        className="swiper swiper-portfolio animated-layer fade-in-right-animation fadeInUp wow"
+        className="swiper swiper-portfolio animated-layer fade-in-right-animation fadeInUp wow items-center"
         data-wow-offset={200}
       >
-        {/* PORTFOLIO ITEM STARTS */}
-        <SwiperSlide className="single-item swiper-slide">
-          {/* ITEM MAIN CONTENT STARTS */}
-          <div className="main-content">
-            <img
-              className="img-fluid"
-              src="assets/portfolio/project-1.jpg"
-              alt="Image Project"
-            />
-          </div>
-          {/* ITEM MAIN CONTENT ENDS */}
-          {/* ITEM DETAILS STARTS */}
-          <div className="details">
-            <h4>Image Project</h4>
-            <div>
-              <ul>
-                <li>
-                  <span>
-                    <i className="fa-regular fa-file-lines" /> Project :
+        {/* PORTFOLIO ITEM STARTS */}{" "}
+        <SwiperSlide
+          className="single-item swiper-slide"
+          style={{
+            justifyContent: "center",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <div className="latestposts  flex-column-mobile">
+            {/* POST ITEM STARTS */}
+
+            {/* POST ITEM ENDS */}
+            {/* POST ITEM STARTS */}
+            <div className="animated-layer fade-in-right-animation fadeInUp wow">
+              <Link href="/blog-post" legacyBehavior>
+                <a>
+                  <span className="img-holder">
+                    <img src="assets/blog/blog-post-2.jpg" alt="" />
                   </span>
-                  <span>Website</span>
-                </li>
-                <li>
-                  <span>
-                    <i className="fa-regular fa-user" /> Client :
-                  </span>
-                  <span>Envato</span>
-                </li>
-                <li>
-                  <span>
-                    <i className="fa-regular fa-hourglass" /> Duration :
-                  </span>
-                  <span>3 months</span>
-                </li>
-                <li>
-                  <span>
-                    <i className="fa-solid fa-code-branch" /> Frameworks :
-                  </span>
-                  <span>WordPress</span>
-                </li>
-              </ul>
+                  <div className="content">
+                    <span className="category">development</span>
+                    <span className="title">
+                      How Efficient Site Structure Can Boost SEO
+                    </span>
+                    <p>
+                      ncididunt ut labore et dolore magna aliqua. Ut enim aminim
+                      veniam...
+                    </p>
+                    <div className="meta d-flex align-items-center">
+                      <div className="d-flex align-items-center">
+                        <i className="fa-regular fa-calendar" />
+                        <span>21 Feb 2022</span>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <i className="fa-regular fa-comments" />
+                        <span>34 comments</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </Link>
             </div>
-            <a href="#" target="_blank" className="custom-btn">
-              <span>
-                preview <i className="fa-solid fa-arrow-up-right-from-square" />
-              </span>
-            </a>
+            {/* POST ITEM ENDS */}
+            {/* POST ITEM STARTS */}
+            <div className="animated-layer fade-in-right-animation fadeInUp wow">
+              <Link href="/blog-post" legacyBehavior>
+                <a>
+                  <span className="img-holder">
+                    <img src="assets/blog/blog-post-3.jpg" alt="" />
+                  </span>
+                  <div className="content">
+                    <span className="category">essentials</span>
+                    <span className="title">
+                      Change Management for Customer Success
+                    </span>
+                    <p>
+                      ncididunt ut labore et dolore magna aliqua. Ut enim aminim
+                      veniam...
+                    </p>
+                    <div className="meta d-flex align-items-center">
+                      <div className="d-flex align-items-center">
+                        <i className="fa-regular fa-calendar" />
+                        <span>1 Jan 2022</span>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <i className="fa-regular fa-comments" />
+                        <span>10 comments</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </Link>
+            </div>
+            {/* POST ITEM ENDS */}
           </div>
-          {/* ITEM DETAILS ENDS */}
+        </SwiperSlide>
+        <SwiperSlide
+          className="single-item swiper-slide flex justify-center items-center"
+          style={{
+            justifyContent: "center",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <div className="latestposts  flex-column-mobile">
+            {/* POST ITEM STARTS */}
+
+            {/* POST ITEM ENDS */}
+            {/* POST ITEM STARTS */}
+            <div className="animated-layer fade-in-right-animation fadeInUp wow">
+              <Link href="/blog-post" legacyBehavior>
+                <a>
+                  <span className="img-holder">
+                    <img src="assets/blog/blog-post-2.jpg" alt="" />
+                  </span>
+                  <div className="content">
+                    <span className="category">development</span>
+                    <span className="title">
+                      How Efficient Site Structure Can Boost SEO
+                    </span>
+                    <p>
+                      ncididunt ut labore et dolore magna aliqua. Ut enim aminim
+                      veniam...
+                    </p>
+                    <div className="meta d-flex align-items-center">
+                      <div className="d-flex align-items-center">
+                        <i className="fa-regular fa-calendar" />
+                        <span>21 Feb 2022</span>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <i className="fa-regular fa-comments" />
+                        <span>34 comments</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </Link>
+            </div>
+            {/* POST ITEM ENDS */}
+            {/* POST ITEM STARTS */}
+            <div className="animated-layer fade-in-right-animation fadeInUp wow">
+              <Link href="/blog-post" legacyBehavior>
+                <a>
+                  <span className="img-holder">
+                    <img src="assets/blog/blog-post-3.jpg" alt="" />
+                  </span>
+                  <div className="content">
+                    <span className="category">essentials</span>
+                    <span className="title">
+                      Change Management for Customer Success
+                    </span>
+                    <p>
+                      ncididunt ut labore et dolore magna aliqua. Ut enim aminim
+                      veniam...
+                    </p>
+                    <div className="meta d-flex align-items-center">
+                      <div className="d-flex align-items-center">
+                        <i className="fa-regular fa-calendar" />
+                        <span>1 Jan 2022</span>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <i className="fa-regular fa-comments" />
+                        <span>10 comments</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </Link>
+            </div>
+            {/* POST ITEM ENDS */}
+          </div>
         </SwiperSlide>
         {/* PORTFOLIO ITEM ENDS */}
         {/* PORTFOLIO ITEM STARTS */}
-        <SwiperSlide className="single-item swiper-slide">
-          {/* ITEM MAIN CONTENT STARTS */}
-          <div className="main-content">
-            <div className="videocontainer">
-              <iframe
-                className="youtube-video"
-                src="https://www.youtube.com/embed/AqcjdkPMPJA?enablejsapi=1&version=3&playerapiid=ytplayer"
-                allowFullScreen=""
-              />
-            </div>
-          </div>
-          {/* ITEM MAIN CONTENT ENDS */}
-          {/* ITEM DETAILS STARTS */}
-          <div className="details">
-            <h4>Youtube Project</h4>
-            <div>
-              <ul>
-                <li>
-                  <span>
-                    <i className="fa-regular fa-file-lines" /> Project :
-                  </span>
-                  <span>Short Film</span>
-                </li>
-                <li>
-                  <span>
-                    <i className="fa-regular fa-user" /> Client :
-                  </span>
-                  <span>Videohive</span>
-                </li>
-                <li>
-                  <span>
-                    <i className="fa-regular fa-hourglass" /> Duration :
-                  </span>
-                  <span>8 months</span>
-                </li>
-                <li>
-                  <span>
-                    <i className="fa-solid fa-code-branch" /> Frameworks :
-                  </span>
-                  <span>After Effects</span>
-                </li>
-              </ul>
-            </div>
-            <a href="#" target="_blank" className="custom-btn">
-              <span>
-                preview <i className="fa-solid fa-arrow-up-right-from-square" />
-              </span>
-            </a>
-          </div>
-          {/* ITEM DETAILS ENDS */}
-        </SwiperSlide>
-        {/* PORTFOLIO ITEM ENDS */}
-        {/* PORTFOLIO ITEM STARTS */}
-        <SwiperSlide className="single-item swiper-slide">
-          {/* ITEM MAIN CONTENT STARTS */}
-          <div className="main-content">
-            <Swiper
-              {...salimovSlider.portfolioItems}
-              className="swiper swiper-portfolio-item"
-            >
-              <SwiperSlide className="swiper-slide">
-                <img src="assets/portfolio/project-2.jpg" title="img" />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <img src="assets/portfolio/project-3.jpg" title="img" />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <img src="assets/portfolio/project-1.jpg" title="img" />
-              </SwiperSlide>
-              <div className="swiper-pagination" />
-            </Swiper>
-          </div>
-          {/* ITEM MAIN CONTENT ENDS */}
-          {/* ITEM DETAILS STARTS */}
-          <div className="details">
-            <h4>Slider Project</h4>
-            <div>
-              <ul>
-                <li>
-                  <span>
-                    <i className="fa-regular fa-file-lines" /> Project :
-                  </span>
-                  <span>Mobile App</span>
-                </li>
-                <li>
-                  <span>
-                    <i className="fa-regular fa-user" /> Client :
-                  </span>
-                  <span>Codecanyon</span>
-                </li>
-                <li>
-                  <span>
-                    <i className="fa-regular fa-hourglass" /> Duration :
-                  </span>
-                  <span>3 months</span>
-                </li>
-                <li>
-                  <span>
-                    <i className="fa-solid fa-code-branch" /> Frameworks :
-                  </span>
-                  <span>React JS</span>
-                </li>
-              </ul>
-            </div>
-            <a href="#" target="_blank" className="custom-btn">
-              <span>
-                preview <i className="fa-solid fa-arrow-up-right-from-square" />
-              </span>
-            </a>
-          </div>
-          {/* ITEM DETAILS ENDS */}
-        </SwiperSlide>
-        {/* PORTFOLIO ITEM ENDS */}
-        {/* PORTFOLIO ITEM STARTS */}
-        <SwiperSlide className="single-item swiper-slide">
-          {/* ITEM MAIN CONTENT STARTS */}
-          <div className="main-content">
-            <a
-              href="https://themeforest.net"
-              target="_blank"
-              className="external"
-            >
-              <img
-                className="img-fluid"
-                src="assets/portfolio/project-3.jpg"
-                alt="External Project"
-              />
-            </a>
-          </div>
-          {/* ITEM MAIN CONTENT ENDS */}
-          {/* ITEM DETAILS STARTS */}
-          <div className="details">
-            <h4>External Link</h4>
-            <div>
-              <ul>
-                <li>
-                  <span>
-                    <i className="fa-regular fa-file-lines" /> Project :
-                  </span>
-                  <span>Advertising</span>
-                </li>
-                <li>
-                  <span>
-                    <i className="fa-regular fa-user" /> Client :
-                  </span>
-                  <span>Envato</span>
-                </li>
-                <li>
-                  <span>
-                    <i className="fa-regular fa-hourglass" /> Duration :
-                  </span>
-                  <span>1 month</span>
-                </li>
-                <li>
-                  <span>
-                    <i className="fa-solid fa-code-branch" /> Frameworks :
-                  </span>
-                  <span>Adobe Premiere</span>
-                </li>
-              </ul>
-            </div>
-            <a href="#" target="_blank" className="custom-btn">
-              <span>
-                preview <i className="fa-solid fa-arrow-up-right-from-square" />
-              </span>
-            </a>
-          </div>
-          {/* ITEM DETAILS ENDS */}
-        </SwiperSlide>
         {/* PORTFOLIO ITEM ENDS */}
         <div className="nav-item next-item animated-btn">
           <span />

@@ -26,7 +26,7 @@ const Index = () => {
             <Home />
             <About />
             <Separator type={"down"} />
-            <Facts />
+            {/* <Facts /> */}
             <Separator type={"up"} />
             <Portfolio />
             <Separator type={"down"} />

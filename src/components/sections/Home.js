@@ -12,7 +12,7 @@ const Home = () => {
             <span className="position-relative">
               <span className="animated-layer">I am</span>
               <span className="intro animated-layer">
-                Front-end Developer with 7 years experience based in London
+                Software Engineer Based in Sri Lanka 🇱🇰.
               </span>
             </span>
             <span>
